@@ -104,6 +104,7 @@ create policy "Read references for eligible audience" on public.references for s
 );
 
 drop policy if exists "Users read own researcher request" on public.researcher_requests;
+drop policy if exists "Users read own or admins read researcher requests" on public.researcher_requests;
 create policy "Users read own or admins read researcher requests" on public.researcher_requests for select
   using (user_id = (select auth.uid()) or public.is_stc_admin());
 drop policy if exists "Users submit own researcher request" on public.researcher_requests;

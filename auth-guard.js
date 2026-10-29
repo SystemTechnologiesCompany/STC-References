@@ -16,7 +16,7 @@
     const copy={
       eyebrow:french?'SESSION DU COMPTE':'ACCOUNT SESSION',
       title:french?'Prêt à vous déconnecter':'Ready to sign out',
-      description:french?'Vous pourrez vous reconnecter à tout moment. Vos références enregistrées resteront sur cet appareil.':'You can sign back in anytime. Your saved references will stay on this device.',
+      description:french?'Vous pourrez vous reconnecter à tout moment. Vos références enregistrées resteront dans votre compte.':'You can sign back in anytime. Your saved references will remain in your account.',
       stay:french?'Rester connecté':'Stay signed in',
       logout:french?'Déconnexion':'Log out',
       working:french?'Déconnexion en cours…':'Signing out…',
