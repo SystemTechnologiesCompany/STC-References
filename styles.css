@@ -226,6 +226,8 @@ body.signed-in [data-authenticated-only]{display:inline-flex!important}
   .explore-page>.explore-topbar .lang-switch,.profile-page>.profile-topbar .lang-switch{min-height:36px!important;padding-inline:8px!important;font-size:10px!important}
 }
 @media(prefers-reduced-motion:reduce){.topbar .menu-toggle span,.topbar .main-nav.open a{transition:none!important}}
+.compass-motion{display:none}
+@media(max-width:700px){.compass-stage{touch-action:pan-y}.compass-motion{position:absolute;z-index:8;top:1%;left:50%;display:inline-flex;align-items:center;justify-content:center;gap:7px;max-width:calc(100% - 12px);min-height:32px;padding:7px 11px;transform:translateX(-50%);border:1px solid #f2e5c155;border-radius:999px;background:#240812aa;color:#f5e8d7;backdrop-filter:blur(15px);-webkit-backdrop-filter:blur(15px);box-shadow:inset 0 1px #fff2,0 8px 20px #10030b44;font:600 8px var(--display);letter-spacing:.06em;white-space:nowrap;cursor:pointer;transition:background .2s,border-color .2s,transform .2s}.compass-motion:active{transform:translateX(-50%) scale(.97)}.compass-motion[aria-pressed="true"]{border-color:#e4c77b;background:#c29c5a;color:#32101d}.motion-indicator{width:6px;height:6px;border-radius:50%;background:#e3c77e;box-shadow:0 0 8px #e3c77e}.compass-motion[aria-pressed="true"] .motion-indicator{background:#4a1930;box-shadow:0 0 8px #fff4c2}.motion-enabled .compass-motion{box-shadow:0 0 18px #e3c77e35,inset 0 1px #fff4}}
 
 /* Phone viewport guard: keep the landing page and floating header flush to the screen */
 @media(max-width:700px){
