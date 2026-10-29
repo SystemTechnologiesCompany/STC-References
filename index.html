@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#091711">
+  <meta name="description" content="A clearer path through your next academic decision. Discover study fields and trusted university resources with STC References.">
+  <title>STC References</title>
+  <link rel="icon" type="image/png" href="STC%20References%20Logo.png">
+  <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="STC References home"><span class="brand-emblem"><img src="logo only head.png" alt=""><i aria-hidden="true"></i></span><span class="brand-name"><span>STC</span><i aria-hidden="true"></i><b>REFERENCES</b></span></a>
+    <nav class="main-nav" aria-label="Main navigation"><a href="explore.html" data-i18n="navExplore">Explore</a><a href="#about" data-i18n="navAbout">Our approach</a><a href="profile.html">My profile</a></nav>
+    <div class="nav-actions"><div class="language-picker"><button class="lang-switch" id="langSwitch" aria-label="Choose language" aria-haspopup="listbox" aria-expanded="false">EN <span class="language-chevron" aria-hidden="true"><img src="arrow-drop-down-big-svgrepo-com.svg" alt=""></span></button><div class="language-menu" id="languageMenu" role="listbox" aria-label="Choose language" hidden><button type="button" role="option" data-language="en" aria-selected="true"><span>English</span><span class="language-check">✓</span></button><button type="button" role="option" data-language="fr" aria-selected="false"><span>Français</span><span class="language-check">✓</span></button></div></div><button class="button button-dark button-small" data-open-auth data-auth-mode="signin"><span class="nav-signin-label" data-i18n="signIn">Sign in</span><img class="nav-arrow arrow-svg" src="arrow to go .svg" alt=""></button><button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button></div>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <canvas class="fluid-canvas" aria-hidden="true"></canvas><div class="hero-scrim" aria-hidden="true"></div><div class="hero-grain" aria-hidden="true"></div>
+      <div class="hero-copy">
+        <p class="hero-badge"><span data-i18n="heroBadge">A compass for your next chapter</span></p>
+        <h1 id="hero-title" class="hero-title" data-i18n="headline">Your next chapter<br>starts <em>with a direction</em></h1>
+        <p class="hero-lede" data-i18n="lede">Explore study fields, uncover the paths behind them, and find the university resources that help you move with confidence.</p>
+        <div class="hero-actions"><a href="explore.html" class="button button-dark" data-i18n="exploreCta">Explore study paths <span><img class="arrow-svg" src="arrow to go .svg" alt=""></span></a><button class="text-button account-cta" data-open-auth data-auth-mode="signup"><img class="account-icon" src="create account.svg" alt=""><span data-i18n="accountCta">Create your account</span></button></div>
+        <div class="hero-footnote"><span class="footnote-rule"></span><span data-i18n="proof">Begin with curiosity. Follow the references.</span><span class="footnote-rule"></span></div>
+      </div>
+      <div class="compass-stage" id="compassStage" role="group" tabindex="0" aria-label="Interactive compass. Move your pointer to explore.">
+        <div class="compass-halo"></div><div class="compass-orbit orbit-one"></div><div class="compass-orbit orbit-two"></div>
+        <div class="compass-shell" id="compassShell">
+          <div class="compass-rim"></div><div class="compass-face">
+            <div class="dial-ticks"></div><div class="dial-ring dial-ring-one"></div><div class="dial-ring dial-ring-two"></div>
+            <span class="direction direction-n">N</span><span class="direction direction-e">E</span><span class="direction direction-s">S</span><span class="direction direction-w">W</span>
+            <div class="compass-needle" id="compassNeedle"><i></i><b></b></div><div class="needle-hub"><span></span></div>
+            <div class="dial-glint"></div>
+          </div>
+        </div>
+        <div class="compass-tag tag-top"><span class="tag-dot"></span><span>STC · FIND YOUR DIRECTION</span></div>
+        <div class="compass-tag tag-bottom"><span id="headingValue">N 00°</span><i></i><span data-i18n="compassLive">LIVE BEARING</span></div>
+      </div>
+      <a href="#explore" class="scroll-cue" aria-label="Scroll to explore"><span data-i18n="scrollCue">SCROLL TO EXPLORE</span><i></i></a>
+    </section>
+
+    <section class="explore-section" id="explore">
+      <div class="journey-split" id="journeySplit" style="--split:50%" aria-label="From late night study to graduation">
+        <div class="journey-scene journey-study" aria-hidden="true">
+          <div class="scene-light"></div><div class="scene-window"><i></i><i></i><i></i></div><div class="scene-shelf"></div>
+          <span class="scene-label">THE WORK</span><span class="scene-caption">One more page<br>one step closer</span>
+          <svg class="scene-art study-art" viewBox="60 30 520 340" role="presentation">
+            <ellipse class="scene-floor-glow" cx="320" cy="347" rx="245" ry="22"/>
+            <rect class="monitor" x="421" y="122" width="106" height="91" rx="8"/><rect class="screen-glow" x="430" y="131" width="88" height="73" rx="4"/>
+            <path class="screen-line" d="M441 151h42m-42 13h58m-58 13h36"/><path class="monitor-stand" d="M474 213v30m-22 2h44"/>
+            <circle class="study-head" cx="291" cy="139" r="22"/><path class="study-face" d="M284 147q7-6 14 0"/>
+            <path class="study-body" d="M291 162v75"/><path class="study-shirt" d="M278 169q13-9 26 0l14 58-38 10-18-39z"/>
+            <path class="study-limb" d="M286 180l31 28"/><path class="study-limb typing-forearm typing-forearm-a" d="M317 208l52 34"/>
+            <path class="study-limb" d="M303 180l35 25"/><path class="study-limb typing-forearm typing-forearm-b" d="M338 205l62 37"/>
+            <path class="study-leg" d="M288 233l-8 91m25-91 18 91"/><path class="study-foot" d="M280 324h-22m65 0h22"/>
+            <path class="desk-line" d="M75 263H565M105 264l-16 91m445-91 16 91"/>
+            <path class="keyboard" d="M352 247h102l-12 10h-99z"/><path class="typing-keys" d="M363 251h5m7 0h5m7 0h5m7 0h5m7 0h5m7 0h5"/>
+            <path class="desk-detail" d="M129 283h75m-62 12h63"/><circle class="desk-dot" cx="161" cy="277" r="4"/>
+          </svg>
+        </div>
+        <div class="journey-scene journey-graduate" aria-hidden="true">
+          <div class="grad-sun"></div><div class="grad-stars"><i>✦</i><i>✦</i><i>✦</i><i>✦</i><i>✦</i></div><span class="scene-label">THE MOMENT</span><span class="scene-caption">Every late night<br>led you here</span>
+          <svg class="scene-art graduate-art" viewBox="100 38 440 330" role="presentation">
+            <ellipse class="scene-floor-glow" cx="322" cy="347" rx="190" ry="21"/>
+            <path class="grad-sleeve" d="M286 188q34-17 68 0l39 109H247z"/>
+            <path class="grad-gown" d="M286 190l34 24 34-24 35 110H251z"/>
+            <path class="grad-stole" d="M300 195l20 19-18 76-23-76zm40 0-20 19 18 76 24-76z"/>
+            <path class="grad-arm grad-arm-left" d="M287 194l-30-18-27-31-17-44"/><path class="grad-arm grad-arm-right" d="M353 194l30-18 27-31 17-44"/>
+            <circle class="grad-hand" cx="213" cy="101" r="7"/><circle class="grad-hand" cx="427" cy="101" r="7"/>
+            <path class="grad-neck" d="M308 166v25h24v-25"/><circle class="grad-head" cx="320" cy="143" r="27"/>
+            <path class="grad-smile" d="M310 151q10 11 20 0"/>
+            <path class="grad-cap" d="M275 110l45-22 46 22-46 22z"/><path class="cap-band" d="M293 120v13q27 17 54 0v-13"/><path class="tassel" d="M365 110v31l-7 8"/>
+            <path class="grad-legs" d="M281 294l-13 36m92-36 13 36"/><path class="grad-shoes" d="M251 334h25m81 0h25"/>
+          </svg>
+        </div>
+        <input class="journey-slider" type="range" min="10" max="90" value="50" aria-label="Slide between the student studying and celebrating graduation">
+        <div class="journey-divider" aria-hidden="true"><span><i></i><i></i></span></div>
+      </div>
+      <div class="focus-challenge" id="focusChallenge" role="group" aria-label="Interactive center target">
+        <div class="focus-atmosphere" aria-hidden="true"></div><div class="focus-celebration" aria-hidden="true"><i>✦</i><i>✦</i><i>✦</i><i>✦</i><i>✦</i><i>✦</i><i>✦</i><i>✦</i><i>✦</i><i>✦</i></div><span class="focus-label">FIND YOUR FOCUS</span>
+        <div class="focus-target"><i class="focus-orbit focus-orbit-a" aria-hidden="true"></i><i class="focus-orbit focus-orbit-b" aria-hidden="true"></i><i class="focus-orbit focus-orbit-c" aria-hidden="true"></i><i class="focus-crosshair crosshair-x" aria-hidden="true"></i><i class="focus-crosshair crosshair-y" aria-hidden="true"></i><span class="focus-pointer" aria-hidden="true"></span><button class="focus-center" id="focusCenter" type="button" aria-label="Hit the center spot"><i></i></button></div>
+        <p class="focus-instruction" id="focusInstruction" aria-live="polite">Move the light and find the center</p><span class="focus-coordinate">STC / A CLEARER WAY FORWARD</span>
+      </div>
+    </section>
+
+    <section class="reference-world" id="references" aria-labelledby="reference-title">
+      <div class="world-atmosphere" aria-hidden="true"></div><div class="world-grain" aria-hidden="true"></div>
+      <div class="world-copy"><div class="eyebrow world-eyebrow"><span class="world-eyebrow-rule"></span><span data-i18n="modelKicker">THE STC REFERENCE WORLD</span></div><h2 id="reference-title" data-i18n="modelTitle">A world of ideas<br><em>ready to explore</em></h2><p data-i18n="modelIntro">Move through our study room. Each object turns toward your pointer and opens a window into research and discovery.</p>
+        <div class="world-collections" role="tablist" aria-label="Explore model collections"><button class="world-collection active" role="tab" aria-selected="true" data-world-group="maps" data-i18n="mapsCategory">Maps &amp; worlds</button><button class="world-collection" role="tab" aria-selected="false" data-world-group="research" data-i18n="researchCategory">Research tools</button><button class="world-collection" role="tab" aria-selected="false" data-world-group="library" data-i18n="libraryCategory">The library</button></div>
+        <div class="world-model-caption"><span class="world-model-index" id="worldModelIndex">01 / 05</span><h3 id="worldModelName">A vintage globe</h3><p id="worldModelBlurb">A well-travelled view of the world, ready for a new question.</p></div>
+        <div class="world-controls"><button id="worldPrevious" aria-label="Previous object">←</button><div class="world-progress"><span id="worldProgress"></span></div><button id="worldNext" aria-label="Next object">→</button><span class="world-interact" data-i18n="modelInteract">MOVE TO ROTATE</span></div>
+      </div>
+      <div class="world-stage" id="worldStage" data-group="maps" tabindex="0" role="group" aria-label="Large interactive 3D study object; move pointer to rotate"><div class="world-stage-rings ring-a"></div><div class="world-stage-rings ring-b"></div><div class="world-object-glow"></div><div class="world-fallback" aria-hidden="true"><div class="fallback-object fallback-globe"><div class="fallback-globe-grid"><i></i><b></b></div><svg viewBox="0 0 200 200"><path d="M45 47l16-14 18 5 7 15-12 9-3 13-14 5-12-9-12 1-8-13zm58-8 18-8 22 7 12 13-4 12-14 3-4 12-12 2-9-12-16-2-6-12zm-22 45 16 2 10 12-3 19 8 12-8 21-12 13-8-15-4-17-11-17 2-16zm58-3 17 3 13 12-6 14-16 6-12-11z"/></svg></div><div class="fallback-object fallback-loupe"><span></span><i></i></div><div class="fallback-object fallback-books"><i></i><i></i><i></i><b></b></div></div><canvas id="worldCanvas"></canvas><div class="world-object-shadow"></div><div class="world-loading" id="worldLoading"><i></i><span data-i18n="modelLoading">Preparing the collection</span></div><div class="world-object-index" id="worldObjectNumber">01</div></div>
+      <div class="world-foot"><span>STC / 3D STUDY ATLAS</span><span class="world-foot-line"></span><span data-i18n="modelFoot">MOVE THE OBJECT · FOLLOW YOUR CURIOSITY</span></div>
+    </section>
+    <section class="manifesto" id="about"><div class="manifesto-orb"><span>STC</span><i></i></div><div><div class="eyebrow"><img class="gold-stc-mark" src="logo only head.png" alt="" aria-hidden="true"><span data-i18n="manifestoEyebrow">A little light goes a long way</span></div><h2 data-i18n="manifestoTitle">Not every answer<br><em>A better place to begin</em></h2><p data-i18n="manifestoText">STC References brings useful academic resources closer to the people looking for their way. Explore with an open mind; follow the sources that move you forward.</p><a href="#explore" class="manifesto-link" data-i18n="manifestoLink">Take the first step <span><img class="arrow-svg" src="arrow to go .svg" alt=""></span></a></div><div class="manifesto-note"><span>“</span><p data-i18n="manifestoQuote">A good reference doesn't choose your path. It helps you see it.</p><small>— STC REFERENCES</small></div></section>
+  </main>
+
+  <footer class="footer"><a class="brand footer-brand" href="#top"><span class="brand-emblem"><img src="logo only head.png" alt=""><i aria-hidden="true"></i></span><span class="brand-name"><span>STC</span><i aria-hidden="true"></i><b>REFERENCES</b></span></a><a class="footer-slogan" href="https://stc-official.netlify.app/" target="_blank" rel="noopener noreferrer" data-i18n="footerLine">STC The Way To Greatness</a><span>© <span id="year"></span> STC References</span></footer>
+
+  <div class="modal-backdrop" id="authModal" aria-hidden="true"><section class="auth-modal" role="dialog" aria-modal="true" aria-labelledby="authTitle"><button class="modal-close" id="closeAuth" aria-label="Close">×</button><div class="modal-brand"><span class="brand-emblem"><img src="logo only head.png" alt=""><i aria-hidden="true"></i></span></div><div class="eyebrow eyebrow-muted"><img class="gold-stc-mark" src="logo only head.png" alt="" aria-hidden="true"><span data-i18n="authEyebrow">YOUR NEXT CHAPTER</span></div><h2 id="authTitle" data-i18n="authTitle">Make room for possibility</h2><p class="auth-intro" data-i18n="authIntro">Create an account to keep your academic discoveries close.</p><div class="auth-tabs"><button class="auth-tab active" data-mode="signup" data-i18n="createAccount">Create account</button><button class="auth-tab" data-mode="signin" data-i18n="signIn">Sign in</button></div><form id="authForm"><label for="email" data-i18n="emailLabel">Email address</label><input id="email" type="email" autocomplete="email" placeholder="you@example.com" required><label for="password" data-i18n="passwordLabel">Password</label><div class="password-field"><input id="password" type="password" autocomplete="new-password" minlength="6" placeholder="At least 6 characters" required><button class="password-visibility" id="togglePassword" type="button" aria-label="Show password" aria-pressed="false" title="Show password"><svg class="eye-open" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"></path><circle cx="12" cy="12" r="3"></circle></svg><svg class="eye-closed" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3l18 18M10.6 10.6a2 2 0 0 0 2.8 2.8M9.9 5.2A11 11 0 0 1 12 5c6.4 0 10 7 10 7a16 16 0 0 1-3.1 3.8M6.2 6.2C3.5 8 2 12 2 12s3.6 7 10 7c1.2 0 2.3-.3 3.3-.7"></path></svg></button></div><button class="button button-dark auth-submit" type="submit"><span data-i18n="continueEmail">Continue with email</span><span><img class="arrow-svg" src="arrow to go .svg" alt=""></span></button></form><div class="divider"><span data-i18n="or">or</span></div><button class="google-button" id="googleAuth"><img src="google.svg" alt=""><span data-i18n="continueGoogle">Continue with Google</span></button><p class="auth-message" id="authMessage" role="status"></p><p class="auth-legal" data-i18n="authLegal">By continuing, you agree to use STC References respectfully and responsibly.</p></section></div>
+  <script src="config.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="journey.js"></script>
+  <script src="focus.js"></script>
+  <script src="app.js"></script>
+  <script src="world-fallback.js"></script>
+  <script type="module" src="models.js"></script>
+</body>
+</html>

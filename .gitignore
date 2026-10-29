@@ -1,0 +1,9 @@
+# Local secrets and credentials
+.env
+.env.*
+!.env.example
+
+# Dependencies and local runtime artifacts
+node_modules/
+.DS_Store
+Thumbs.db
