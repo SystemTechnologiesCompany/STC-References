@@ -176,3 +176,11 @@ body{background:var(--ivory);color:var(--ink)}.topbar{background:linear-gradient
 @media(prefers-reduced-motion:reduce){.auth-modal .google-button,.auth-modal .google-button:before{animation:none!important;transition:none!important}}
 .password-field{position:relative;width:100%;display:flex;align-items:center}.auth-modal .password-field input{width:100%;padding-right:48px}.password-visibility{position:absolute;right:8px;top:50%;display:grid;place-items:center;width:34px;height:34px;transform:translateY(-50%);border:1px solid transparent;border-radius:8px;background:transparent;color:#d7bc7c;cursor:pointer;transition:color .18s,background .18s,border-color .18s,transform .18s}.password-visibility:hover,.password-visibility:focus-visible{outline:none;color:#ffe29a;border-color:#d9b96b61;background:#dfc17b15}.password-visibility:active{transform:translateY(-50%) scale(.92)}.password-visibility svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}.password-visibility .eye-closed{display:none}.password-visibility[aria-pressed="true"] .eye-open{display:none}.password-visibility[aria-pressed="true"] .eye-closed{display:block}
 .auth-modal .modal-close{position:absolute;z-index:5;top:12px;right:14px;display:grid;place-items:center;width:36px;height:36px;padding:0;border:1px solid #e3c67a55;border-radius:50%;background:#21081375;color:#ead8bc;line-height:1;cursor:pointer}.auth-modal .modal-close:hover{border-color:#e3c67a;background:#d7b86624;color:#ffe29a;transform:rotate(90deg)}
+/* Keep protected page content hidden until the Supabase session check finishes */
+html.auth-checking body>*{visibility:hidden!important;pointer-events:none!important}
+html.auth-checking body>#authModal{visibility:visible!important;pointer-events:auto!important}
+body.auth-required{overflow:hidden!important}
+body.auth-required>:not(#authModal){visibility:hidden!important;pointer-events:none!important}
+body.auth-required #authModal{visibility:visible!important;pointer-events:auto!important;opacity:1!important}
+body.auth-required #closeAuth{display:none!important}
+body.signed-out [data-auth-only]{display:none!important}

@@ -87,9 +87,10 @@ create table if not exists public.researcher_requests (
 alter table public.researcher_requests enable row level security;
 
 drop policy if exists "Users read published references" on public.references;
+drop policy if exists "Read references for eligible audience" on public.references;
 create policy "Read references for eligible audience" on public.references for select using (
   public.is_stc_admin()
-  or (published and audience = 'student')
+  or ((select auth.uid()) is not null and published and audience = 'student')
   or (published and audience = 'research_independent' and (select auth.uid()) is not null)
   or (
     published and audience = 'research_organization'
@@ -116,7 +117,7 @@ drop policy if exists "Admins review researcher requests" on public.researcher_r
 create policy "Admins review researcher requests" on public.researcher_requests for update
   using (public.is_stc_admin()) with check (public.is_stc_admin());
 
--- Visitors can report a reference without sharing personal information.
+-- Signed-in users can report a reference without exposing reports to anonymous visitors.
 create table if not exists public.reference_reports (
   id uuid primary key default gen_random_uuid(),
   reference_id uuid references public.references(id) on delete set null,
@@ -143,10 +144,11 @@ alter table public.reference_reports
 
 alter table public.reference_reports enable row level security;
 drop policy if exists "Visitors can report references" on public.reference_reports;
-create policy "Visitors can report references" on public.reference_reports for insert to anon, authenticated
+drop policy if exists "Signed-in users can report references" on public.reference_reports;
+create policy "Signed-in users can report references" on public.reference_reports for insert to authenticated
   with check (
     status = 'open'
-    and (reporter_id is null or reporter_id = (select auth.uid()))
+    and reporter_id = (select auth.uid())
   );
 drop policy if exists "Admins review reference reports" on public.reference_reports;
 create policy "Admins review reference reports" on public.reference_reports for select
@@ -155,7 +157,7 @@ drop policy if exists "Admins update reference reports" on public.reference_repo
 create policy "Admins update reference reports" on public.reference_reports for update
   using (public.is_stc_admin()) with check (public.is_stc_admin());
 
-grant insert on public.reference_reports to anon, authenticated;
+grant insert on public.reference_reports to authenticated;
 grant select, update on public.reference_reports to authenticated;
 
 -- Admin fixes for built-in Explore links are kept outside the static catalog.
@@ -175,8 +177,9 @@ create table if not exists public.reference_link_overrides (
 
 alter table public.reference_link_overrides enable row level security;
 drop policy if exists "Visitors read active reference link fixes" on public.reference_link_overrides;
-create policy "Visitors read active reference link fixes" on public.reference_link_overrides for select
-  using (active);
+drop policy if exists "Signed-in users read active reference link fixes" on public.reference_link_overrides;
+create policy "Signed-in users read active reference link fixes" on public.reference_link_overrides for select to authenticated
+  using (active and (select auth.uid()) is not null);
 drop policy if exists "Admins add reference link fixes" on public.reference_link_overrides;
 create policy "Admins add reference link fixes" on public.reference_link_overrides for insert
   with check (public.is_stc_admin() and updated_by = (select auth.uid()));
