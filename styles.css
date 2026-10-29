@@ -197,3 +197,4 @@ body.signed-in [data-authenticated-only]{display:inline-flex!important}
 @media(max-width:700px){.logout-nav-button{display:none!important}}
 @media(prefers-reduced-motion:reduce){.logout-backdrop,.logout-dialog{animation:none!important}.logout-nav-button,.logout-nav-button svg,.logout-actions button,.logout-close,.logout-confirm svg{transition:none!important}}
 @media(max-width:700px){body.signed-in .nav-actions .logout-nav-button{display:inline-flex!important;width:36px;min-width:36px;height:36px;min-height:36px;padding:0!important;justify-content:center}.logout-nav-button [data-logout-nav-label]{display:none}}
+.logout-nav-button .nav-signin-label{color:#fff!important}
