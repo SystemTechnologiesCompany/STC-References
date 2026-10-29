@@ -184,3 +184,6 @@ body.auth-required>:not(#authModal){visibility:hidden!important;pointer-events:n
 body.auth-required #authModal{visibility:visible!important;pointer-events:auto!important;opacity:1!important}
 body.auth-required #closeAuth{display:none!important}
 body.signed-out [data-auth-only]{display:none!important}
+body:not(.signed-in) [data-authenticated-only]{display:none!important}
+body.signed-in [data-guest-only]{display:none!important}
+body.signed-in [data-authenticated-only]{display:inline-flex!important}

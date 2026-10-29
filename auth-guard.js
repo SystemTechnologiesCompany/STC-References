@@ -6,6 +6,14 @@
   const nextPage = ['explore.html','profile.html'].includes(requested) ? requested : '';
   const isHome = page === 'index.html';
   const modal = document.querySelector('#authModal');
+  const updateProfileNavLabel = () => {
+    const label = document.querySelector('[data-profile-nav-label]');
+    const navLabel = document.querySelector('.main-nav a[href="profile.html"]');
+    const value = document.documentElement.lang === 'fr' ? 'Mon profil' : 'My profile';
+    if (label) label.textContent = value;
+    if (navLabel) navLabel.textContent = value;
+  };
+  document.addEventListener('stc:language',updateProfileNavLabel);
 
   function promptHomeSignIn() {
     if (!modal) return;
@@ -26,6 +34,8 @@
     if (nextPage && isHome) { location.replace(nextPage); return; }
     if (!isHome) return;
     document.body.classList.remove('signed-out');
+    document.body.classList.add('signed-in');
+    updateProfileNavLabel();
     document.body.classList.remove('auth-required');
     document.body.style.overflow = '';
     modal?.classList.remove('open');
@@ -63,6 +73,7 @@
       document.documentElement.classList.remove('auth-checking');
       document.body.classList.add('signed-out');
       document.body.classList.remove('auth-required');
+      document.body.classList.remove('signed-in');
       document.body.style.overflow = '';
       modal?.classList.remove('open');
       modal?.setAttribute('aria-hidden','true');
