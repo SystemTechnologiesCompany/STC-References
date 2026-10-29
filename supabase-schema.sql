@@ -192,3 +192,29 @@ create policy "Admins remove reference link fixes" on public.reference_link_over
 
 grant select on public.reference_link_overrides to anon, authenticated;
 grant insert, update, delete on public.reference_link_overrides to authenticated;
+
+-- Saved references belong to the signed-in account and sync across devices.
+create table if not exists public.user_saved_references (
+  id uuid primary key default gen_random_uuid(),
+  user_id uuid not null references auth.users(id) on delete cascade,
+  reference_id uuid references public.references(id) on delete set null,
+  title text not null check (char_length(title) between 1 and 180),
+  url text not null check (url ~* '^https?://'),
+  description text not null default '',
+  institution text not null default '',
+  field text not null default '',
+  created_at timestamptz not null default now(),
+  unique (user_id, url)
+);
+alter table public.user_saved_references enable row level security;
+drop policy if exists "Users read their saved references" on public.user_saved_references;
+create policy "Users read their saved references" on public.user_saved_references for select to authenticated
+  using (user_id = (select auth.uid()));
+drop policy if exists "Users save their own references" on public.user_saved_references;
+create policy "Users save their own references" on public.user_saved_references for insert to authenticated
+  with check (user_id = (select auth.uid()));
+drop policy if exists "Users remove their saved references" on public.user_saved_references;
+create policy "Users remove their saved references" on public.user_saved_references for delete to authenticated
+  using (user_id = (select auth.uid()));
+revoke all on public.user_saved_references from anon;
+grant select, insert, delete on public.user_saved_references to authenticated;
