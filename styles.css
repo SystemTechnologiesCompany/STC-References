@@ -226,3 +226,21 @@ body.signed-in [data-authenticated-only]{display:inline-flex!important}
   .explore-page>.explore-topbar .lang-switch,.profile-page>.profile-topbar .lang-switch{min-height:36px!important;padding-inline:8px!important;font-size:10px!important}
 }
 @media(prefers-reduced-motion:reduce){.topbar .menu-toggle span,.topbar .main-nav.open a{transition:none!important}}
+
+/* Phone viewport guard: keep the landing page and floating header flush to the screen */
+@media(max-width:700px){
+  html,body{width:100%;min-width:0;overflow-x:clip}
+  body{position:relative}
+  .topbar{width:calc(100vw - 24px);max-width:calc(100vw - 24px);min-width:0;margin:0;padding-inline:12px;gap:8px}
+  .topbar>.brand{min-width:0;flex:0 1 auto;gap:7px}
+  .topbar .brand-name{gap:5px;font-size:11px;letter-spacing:.06em}
+  .topbar .brand-name b{font-size:7px;letter-spacing:.12em}
+  .topbar .nav-actions{flex:0 0 auto;min-width:0;gap:6px}
+  .topbar .lang-switch{min-width:56px;min-height:36px;padding:7px 9px;font-size:10px}
+  .topbar .menu-toggle{width:36px;height:36px;flex:0 0 36px}
+  main,#top,.hero{width:100%;max-width:none;min-width:0;margin-inline:0}
+  .hero{width:100vw;padding-inline:22px}
+  .hero-copy{width:100%;min-width:0}
+  .hero-title,.hero h1{max-width:100%;overflow-wrap:anywhere}
+  .compass-stage{width:100%;max-width:100%;min-width:0}
+}
